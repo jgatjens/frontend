@@ -40,7 +40,7 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/gulp serve",
-    "build": "rm -Rf ../webroot && ./node_modules/.bin/gulp build && ./node_modules/.bin/http-server ../webroot -o"
+    "build": "rm -Rf ../webroot && ./node_modules/.bin/gulp build && ./node_modules/.bin/http-server ./dist -o"
   },
   "browserify": {
     "transform": [

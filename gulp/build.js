@@ -21,7 +21,7 @@ import nunjucksRender from 'gulp-nunjucks-render';
 // internal imports
 import {config as src}  from './config';
 
-const dist = '../webroot';
+const dist = 'dist';
 const scssDist = dist + '/assets/css';
 const jsDist = dist + '/assets/js';
 const fontsDist = dist + '/assets/fonts';
@@ -30,6 +30,7 @@ const fontsDist = dist + '/assets/fonts';
 gulp.task('sassmin', () =>
 	gulp.src(src.scss)
 		.pipe(sass({ includePaths: [
+				'./node_modules/bootstrap/scss/',
 				'./node_modules/sweetalert/dev'
 			]
 		})).on('error', function (err) { console.error(err.message); })
@@ -94,13 +95,13 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('clean', () =>
-	del([dist, dist + '/webroot.zip'])
+	del([dist, dist + '/dist.zip'])
 )
 
 gulp.task('zip', () =>
   gulp.src(dist + '/**/*')
-    .pipe(zip('webroot.zip'))
-    .pipe(gulp.dest('../'))
+    .pipe(zip('dist.zip'))
+    .pipe(gulp.dest('./'))
 );
 
 gulp.task('build', (cb) => {
@@ -111,5 +112,5 @@ gulp.task('build', (cb) => {
 	// * sass-min, imagemin, htmlmin in parallel
 	// * zip
 	// * Finally call the callback function
-  runSequence('sprite', ['fonts', 'sassmin', 'jsmin', 'imagemin', 'htmlmin'], 'zip', cb);
+  runSequence('clean', 'sprite', ['fonts', 'sassmin', 'jsmin', 'imagemin', 'htmlmin'], 'zip', cb);
 });
