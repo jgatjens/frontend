@@ -1,0 +1,17 @@
+//******* GLOBALS
+@import 'helpers/index';
+@import 'vendors/index';
+
+@import 'header';
+@import 'footer';
+
+.container {
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+svg {
+	width: 15px;
+	height: 15px;
+	margin: 10px
+}

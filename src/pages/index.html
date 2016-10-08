@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% set activeNav = 'index' %}
+
+{% block seo %}
+	<title>Do Not Index</title>
+	<meta name="description" content="Do Not Index">
+	<!-- open graph  -->
+	<meta property="og:title" content="Do Not Index" />
+	<meta property="og:description" content="Do Not Index" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://www.careers.io" />
+	<meta property="og:image" content="assets/images/" />
+	<!-- twitter  -->
+	<meta name="twitter:description" content="Do Not Index" />
+{% endblock %}
+
+{% block content %}
+<section class="container page homepage">
+
+	<div class="container">
+		<h1>Applicants</h1>
+
+		<ul class="list-group">
+		  <li class="list-group-item">
+		    <span class="tag tag-default tag-pill pull-xs-right">1,123</span>
+		    Luca Gatjens: Just now
+		  </li>
+		  <li class="list-group-item">
+		    <span class="tag tag-default tag-pill pull-xs-right">232</span>
+		    Juan perez: 1 hours ago
+		  </li>
+		  <li class="list-group-item">
+	  		<span class="tag-pill pull-xs-right">
+	  		{% include "partials/svg/download.svg" %}
+	  		{% include "partials/svg/link.svg" %}
+	  		{% include "partials/svg/triangle.svg" %}
+	  		</span>
+	  		SVGs:
+		  </li>
+		  <li class="list-group-item">
+	  		<span class="tag-pill pull-xs-right">
+		  		<i class="icon icon-download"></i>
+		  		<i class="icon icon-moa"></i>
+		  		<i class="icon icon-triangle"></i>
+		  	</span>
+		  	Icon sprites:
+		  </li>
+		</ul>
+	</div>
+
+
+</section>
+{% endblock %}

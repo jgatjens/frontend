@@ -1,0 +1,11 @@
+//******* VENDORS
+@import 'bootstrap';
+@import 'sweetalert';
+
+
+@import './sprite';
+@include sprites($spritesheet-sprites);
+
+.icon {
+	display: inline-block;
+}

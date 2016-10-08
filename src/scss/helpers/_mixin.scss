@@ -1,0 +1,27 @@
+@function rem($size) {
+  $remSize: $size / $font-size;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size; //Fallback in px
+  font-size: rem($size);
+}
+
+$browser-context: 16; // Default
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin gradient {
+	background: rgba(0,51,102,1);
+	background: linear-gradient(to right, rgba(0,51,102,1) 0%, rgba(0,172,199,1) 100%);
+}

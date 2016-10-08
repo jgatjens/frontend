@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+dist.zip
+dist/
+.DS_Store
+
+src/assets/css/app.css
+src/assets/js/app.js
+
+
